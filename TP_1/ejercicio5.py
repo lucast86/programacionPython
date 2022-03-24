@@ -1,3 +1,3 @@
 #ejercicio5 - Lucas Trento
-"""Escriba un programa que pida dos números y luego muestre si el primero es divisible por el
-segundo."""
+"""Escribe un programa que pida 3 números e imprima el mayor de los tres.."""
+
