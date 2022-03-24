@@ -8,45 +8,97 @@ cada una de ellas:
 aprobada.
  Si la materia tiene como promedio una nota menor que 6: Materia desaprobada."""
 
+
 print("         ---Bienvenido---        ")
-print("Vamos a cargar las notas de las siguientes materias:\n-->Lengua\n-->Matematica\n-->Fisica\n ")
-seguir=str(input("precione la letra s para seguir: \n  "))
+print("Vamos a cargar las notas de las siguientes materias:\n1-->Lengua\n2-->Matematica\n3-->Fisica\n4-->Quimica\n")
 
-
+seguir=str(input("precione la letra s para seguir:  "))
 while seguir != "s":
     seguir=str(input("letra erronea para continuar con el programa\nprecione s para seguir: \n  "))
-   
-#materia = materia.lower()
-"""if   materia == "lengua":      carga = "lengua"
-elif materia == "matematica":  carga = "matematica"
-elif materia == "fisica":      carga = "fisica"
-else:
-    carga = 0 ,print("la materia no existe")"""
-cont = 0    
 
+cont = 0   
+materias = 0    
+notasLengua = []
+notasMatematicas = []
+notasFisica = []
+notasQuimica = []
 
-while  cont !=3:
-    if cont == 0:
+while  materias !=4:
+    if materias == 0:
         print("\n----Carga las nota de Lengua----\n")
-        nota1Lengua=float(input("ingrese la primer nota: ")) 
-        nota2Lengua=float(input("ingrese la segunda nota: ")) 
-        nota3Lengua=float(input("ingrese la tercer nota: ")) 
-        sumaLengua=(nota1Lengua +nota2Lengua +nota3Lengua)
-        promedioLengua= sumaLengua/3
-    if cont == 1:
+        for cont in range(4):
+            notasLengua.append(int(input("Ingrese las notas de lengua: ")))
+            cont += 1
+        sumaLengua = sum(notasLengua)
+        promedioLengua = sumaLengua/4
+
+    if materias == 1:
         print("\n----Carga las nota de Matematica----\n")
-        nota1Matematica=float(input("ingrese la primer nota: ")) 
-        nota2Matemaica=float(input("ingrese la segunda nota: ")) 
-        nota3Matematica=float(input("ingrese la tercer nota: ")) 
-        sumaMatematica=(nota1Matematica +nota2Matemaica +nota3Matematica)
-        promedioMatematica= sumaMatematica/3
-    if cont == 2:
+        for cont in range(4):
+            notasMatematicas.append(int(input("Ingrese las notas de Matematica: ")))
+            cont += 1
+        sumaMatematica = sum(notasMatematicas)
+        promedioMatematica = sumaMatematica/4
+         
+    if materias == 2:
         print("\n----Carga las nota de Fisica----\n")
-        nota1Fisica=float(input("ingrese la primer nota: ")) 
-        nota2Fisica=float(input("ingrese la segunda nota: ")) 
-        nota3Fisica=float(input("ingrese la tercer nota: ")) 
-        sumaFisica=(nota1Fisica +nota2Fisica +nota3Fisica)
-        promedioFisica= sumaFisica/3
-        print("\n----PROMEDIOS----\n")
-        print(f"-Promedio de Lengua es: {promedioLengua}\n-Promedio de Matematica es: {promedioMatematica}\n-Promedio de Fisica es: {promedioFisica}")  
-    cont = cont + 1
+        for cont in range(4):
+            notasFisica.append(int(input("Ingrese las notas de Fisica: ")))
+            cont += 1
+        sumaFisica = sum(notasFisica)
+        promedioFisica = sumaFisica/4
+         
+    if materias == 3:
+        print("\n----Carga las nota de  Quimica----\n")
+        for cont in range(4):
+            notasQuimica.append(int(input("Ingrese las notas de Quimica: ")))
+            cont += 1
+        sumaQuimica = sum(notasQuimica)
+        promedioQuimica= sumaQuimica/4
+
+    materias +=1
+
+seguir=str(input("\nprecione la letra s para seguir:   "))
+while seguir != "s":
+    seguir=str(input("letra erronea para continuar con el programa\nprecione s para seguir: \n  "))
+
+print("\n----PROMEDIOS----\n")
+print(f"-Promedio de Lengua es: {promedioLengua}") 
+print(f"-Promedio de Matematica es: {promedioMatematica}") 
+print(f"-Promedio de Fisica es: {promedioFisica}")  
+print(f"-Promedio de Quimica es: {promedioQuimica}")
+
+seguir=str(input("\nprecione la letra s para seguir:   "))
+while seguir != "s":
+    seguir=str(input("letra erronea para continuar con el programa\nprecione s para seguir: \n  "))
+
+print("\n----Materias Promocionadas, Aprobadas o Desaprobadas----\n")
+if promedioLengua >= 8:
+    print("--Lengua esta Promocionada FELECITACIONES")
+elif promedioLengua < 8 and promedioLengua >= 6:
+    print("--Lengua esta aprobada")
+elif promedioLengua < 6:
+    print("--Lengua esta desaprobada")
+
+if promedioMatematica >= 8:
+    print("--Matematica esta Promocionada FELECITACIONES")
+elif promedioMatematica < 8 and promedioMatematica >= 6:
+    print("--Matematica esta aprobada")
+elif promedioMatematica < 6:
+    print("--Matematica esta desaprobada")
+
+if promedioFisica >= 8:
+    print("--Fisica esta Promocionada FELECITACIONES")
+elif promedioFisica < 8 and promedioFisica >= 6:
+    print("--Fisica esta aprobada")
+elif promedioFisica < 6:
+    print("--Fisica esta desaprobada")
+
+if promedioQuimica >= 8:
+    print("--Quimica esta Promocionada FELECITACIONES")
+elif promedioQuimica < 8 and promedioQuimica >= 6:
+    print("--Quimica esta aprobada")
+elif promedioQuimica < 6:
+    print("--Quimica esta desaprobada")
+
+print("\nFINN")
